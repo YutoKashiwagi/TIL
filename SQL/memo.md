@@ -15,11 +15,27 @@ https://qiita.com/yurina0402/items/78ae1f536b6755d6221a
 ### エラーが出る時
 実行順序や参照先を気にする
 
-### 関数について
+## 結合について
+from, selectで結合することもできるが、それだと結合条件と絞り込み条件が分離できず、わかりにくい。join, onを使うことで結合条件と絞り込み条件を分離できる
+
+## 関数について
 
 ### coalesce(発音はkōəˈles)
 値がnullの時、指定した値を返す
 - `coalesce(x, 'hoge') # => xがnullならhogeを返す`
+
+## 演算子
+
+### exists演算子
+- 右側にサブクエリを入れ、一件でもレコードが見つかればtrue, 見つからなければfalseを返す
+- レコードが見つかった時点で処理を終了する。countは全て集計する
+
+### all演算子
+- 右側にサブクエリを入れ、サブクエリの結果が全て真ならtrueを返す
+- `select 40 <= all (select score from test_scores where subject = '社会'); # => 社会の点数が全て40点以上ならtrueを返す`
+
+### any演算子
+- allの否定
 
 ## 句について
 ### count
