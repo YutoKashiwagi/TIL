@@ -15,3 +15,6 @@ end
   balance = plus_30(balance)
 end
 ```
+## 重複した要素を一つだけ削除する
+
+参考: http://simanman.hatenablog.com/entry/2013/03/20/013808
