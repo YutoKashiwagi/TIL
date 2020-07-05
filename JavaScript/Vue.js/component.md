@@ -9,3 +9,9 @@
   - `data: function() { return 変数}`
     - dataプロパティに関数の戻り値として渡す
     - propsを利用する
+
+- グローバルコンポーネント
+  - `Vue.component`で定義
+  - グローバルで定義しすぎると処理が重くなるから、基本的にはローカル
+- ローカルコンポーネント
+  - `var app = new Vue({el:..., components: ここに定義})`
