@@ -1,5 +1,6 @@
 #!/bin/bash
 
 git add -A;
-git commit -m 'til追加';
-git push -f origin master;
+date_time=`date '+%Y/%m/%d/%H:%M'`;
+git commit -m "til追加 ${date_time}";
+# git push -f origin master;
