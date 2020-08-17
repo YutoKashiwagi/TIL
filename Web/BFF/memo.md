@@ -12,4 +12,8 @@
 - サイレントログイン
   - ログイン永続化手法の一つ
   - Vuexのストアはブラウザを閉じるとなくなるが、set-cookieは残っている。set-cookieを持った状態でサイレントログイン用のAPIを叩く
-  - nuxtのSSR時のnuxtServerInitのタイミングでサイレントログインして、Vuexに情報を保存する
+  - SSR時
+    - nuxtServerInitのタイミングでサイレントログインして、Vuexに情報を保存する
+  - CSR時
+    - middleWareにサイレントログイン用のメソッドを定義し、マイページなどのログイン必須ページのscriptタグ内でmiddleWareを呼び出してサイレントログインする
+    
