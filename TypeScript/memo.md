@@ -52,6 +52,54 @@ type K3 = keyof { [x: string]: Person }; // string
 - enum
   - 列挙型。[非推奨](https://engineering.linecorp.com/ja/blog/typescript-enum-tree-shaking/)
 
+- Generics
+  - 型を変数のように使える
+  - T, U, Kなどが慣習的に利用されることが多い
+  - 関数の引数のように型に初期値を入れたり、宣言可能な型を制限できる
+  - クラスや関数を組み合わせて使える
+
+```TypeScript
+
+interface Hoge<T> {
+  value: T
+}
+
+const hoge: Hoge<string> = {
+  value: 'hoge'
+}
+
+// 初期値がString
+interface DefaultIsString<U = string> {
+  value: U
+}
+
+const hoge2: DefaultIsString = {
+  value: 'string'
+}
+
+const hoge3: DefaultIsString<number> = {
+  value: 1
+}
+
+// 指定可能な型を制限
+interface StringOrNumber<K extends string | number> {
+  value: K
+}
+
+const hoge4: StringOrNumber<string> = {
+  value: 'string'
+}
+
+const hoge5: StringOrNumber<number> = {
+  value: 1
+}
+
+const hoge6: StringOrNumber<boolean> = {
+  value: true // Error: 型 'boolean' は制約 'string | number' を満たしていません。
+}
+
+```
+
 
 ## コンパイルエラーを得るために
 > コンパイルエラーを得やすいコードほど厳格性が高まり、バグを含みにくくなります
@@ -92,3 +140,14 @@ TSとプログラマのどちらが型について詳しいのか
 
 - クラスの互換性
   - インスタンスのメンバーのみが対象となり、コンストラクターの型は対象にならない
+
+## open-ended
+
+同じ名前の宣言があったとき、自動でマージされる性質のこと
+
+[参考](https://developer.hatenastaff.com/entry/2016/06/27/140931#Open-ended)
+
+- interfaceはopen-ended
+- type aliasは非open-ended
+
+
