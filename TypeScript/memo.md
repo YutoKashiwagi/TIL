@@ -150,4 +150,36 @@ TSとプログラマのどちらが型について詳しいのか
 - interfaceはopen-ended
 - type aliasは非open-ended
 
+## class
+
+### 型定義
+
+- classを定義すると、その型も定義される
+
+#### classの実装を継承せず型だけ継承したいとき、interfaceを使ってクラスの型を使いまわす
+
+```TS
+
+interface Sample {
+  readonly name: string
+  getName: () => string
+}
+
+class ValidSample implements Sample {
+  readonly name: 'hoge'
+
+  getName = () => {
+    return this.name
+  }
+}
+
+class InvalidSample implements Sample {
+  readonly name: 'hoge'
+
+  getName = () => { // Error
+    return 1
+  }
+}
+
+```
 
