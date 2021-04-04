@@ -1,4 +1,4 @@
-## MDNを読んでのメモ
+## [MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies)を読んでのメモ
 ### cookieって何？
 - サーバーからブラウザに送信する
   - ブラウザからもリクエストに含めてサーバーに送信できる
@@ -8,7 +8,6 @@
   - セッション管理
   - パーソナライゼーション
   - トラッキング
-    - ここよくわかってない
 - 汎用的な記憶領域として使える？
   - 小さなデータしか持てない
   - 記憶はcookieではなくWeb Strageとかを使うべき
@@ -25,7 +24,7 @@
 
 ### [Set-Cookieヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Set-Cookie)
 
-- サーバーからユーザーエージェントにCookieを送信するために使用される。
+- サーバーからユーザーエージェントにCookieをセットして送信するために使用される。
 - > 一般的なWebブラウザはHTTP Requestを発行する際にそのResponse Headerに Set-Cookieが含まれていれば自動でローカルのCookie Storageに値をドメイン情報と合わせて保管してくれます
   - [参考](https://blog.andoshin11.me/posts/cookie-forwarding-on-ssr)
 
