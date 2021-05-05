@@ -25,4 +25,5 @@
 
 ### 共通/公開鍵暗号方式についての参考資料
 
-https://www.infraexpert.com/study/security4.html
+- https://www.infraexpert.com/study/security4.html
+- [SSHとは？仕組みとSSHサーバーの設定をわかりやすく解説します！](https://www.kagoya.jp/howto/rentalserver/ssh/)
